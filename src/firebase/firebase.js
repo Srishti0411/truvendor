@@ -1,4 +1,3 @@
-// src/firebase/firebase.js
 
 // Import Firebase services
 import { initializeApp } from "firebase/app";
