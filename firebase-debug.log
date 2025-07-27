@@ -1,0 +1,118 @@
+[debug] [2025-07-27T18:04:29.064Z] ----------------------------------------------------------------------
+[debug] [2025-07-27T18:04:29.066Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\srish\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-07-27T18:04:29.067Z] CLI Version:   14.11.1
+[debug] [2025-07-27T18:04:29.067Z] Platform:      win32
+[debug] [2025-07-27T18:04:29.067Z] Node Version:  v24.4.1
+[debug] [2025-07-27T18:04:29.067Z] Time:          Sun Jul 27 2025 23:34:29 GMT+0530 (India Standard Time)
+[debug] [2025-07-27T18:04:29.067Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-27T18:04:29.071Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-27T18:04:29.071Z] > authorizing via signed-in user (srishti041106@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\srish\OneDrive\Documents\GitHub\truvendor
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-07-27T18:07:33.026Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:07:33.026Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:07:33.029Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-07-27T18:07:33.952Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-07-27T18:07:33.953Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project trustify-feb1b (Truvendor) 
+[info] 
+=== Firestore Setup
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2025-07-27T18:07:41.120Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:07:41.120Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:07:41.120Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/trustify-feb1b/services/firestore.googleapis.com [none]
+[debug] [2025-07-27T18:07:41.120Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/trustify-feb1b/services/firestore.googleapis.com x-goog-quota-user=projects/trustify-feb1b
+[debug] [2025-07-27T18:07:43.159Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/trustify-feb1b/services/firestore.googleapis.com 200
+[debug] [2025-07-27T18:07:43.160Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/trustify-feb1b/services/firestore.googleapis.com [omitted]
+[info] +  firestore: required API firestore.googleapis.com is enabled 
+[debug] [2025-07-27T18:07:43.197Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:07:43.198Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:07:43.198Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/trustify-feb1b/databases [none]
+[debug] [2025-07-27T18:07:44.165Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/trustify-feb1b/databases 200
+[debug] [2025-07-27T18:07:44.165Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/trustify-feb1b/databases {"databases":[{"name":"projects/trustify-feb1b/databases/(default)","uid":"906e9409-1152-4cb7-b38e-f0bebad098f5","createTime":"2025-07-25T18:33:10.119827Z","updateTime":"2025-07-25T18:33:10.119827Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2025-07-27T17:04:39.701554Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"etag":"II7k7ZHQ3Y4DMLqjyOvd2I4D"}]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-07-27T18:08:24.298Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:08:24.298Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:08:24.298Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/trustify-feb1b/releases pageSize=10&pageToken=
+[debug] [2025-07-27T18:08:25.958Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/trustify-feb1b/releases 200
+[debug] [2025-07-27T18:08:25.958Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/trustify-feb1b/releases {"releases":[{"name":"projects/trustify-feb1b/releases/cloud.firestore","rulesetName":"projects/trustify-feb1b/rulesets/5a212c95-6223-42b4-b64e-c5a9c0cb1250","createTime":"2025-07-25T18:33:18.351499Z","updateTime":"2025-07-25T18:33:18.351499Z"}]}
+[debug] [2025-07-27T18:08:25.959Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:08:25.959Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:08:25.959Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/trustify-feb1b/rulesets/5a212c95-6223-42b4-b64e-c5a9c0cb1250 [none]
+[debug] [2025-07-27T18:08:26.568Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/trustify-feb1b/rulesets/5a212c95-6223-42b4-b64e-c5a9c0cb1250 200
+[debug] [2025-07-27T18:08:26.568Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/trustify-feb1b/rulesets/5a212c95-6223-42b4-b64e-c5a9c0cb1250 [omitted]
+[info] i  Downloaded the existing Firestore Security Rules from the Firebase console 
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-07-27T18:08:28.577Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:08:28.577Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:08:28.577Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:08:28.577Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:08:28.577Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/trustify-feb1b/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2025-07-27T18:08:28.579Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/trustify-feb1b/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2025-07-27T18:08:30.463Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/trustify-feb1b/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2025-07-27T18:08:30.463Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/trustify-feb1b/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/trustify-feb1b/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2025-07-27T18:08:30.464Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/trustify-feb1b/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2025-07-27T18:08:30.464Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/trustify-feb1b/databases/(default)/collectionGroups/-/indexes {}
+[info] i  Downloaded the existing Firestore indexes from the Firebase console 
+[info] +  Wrote firestore.rules 
+[info] +  Wrote firestore.indexes.json 
+[info] 
+=== Hosting Setup
+[debug] [2025-07-27T18:08:30.472Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:08:30.473Z] Checked if tokens are valid: true, expires at: 1753643043875
+[debug] [2025-07-27T18:08:30.473Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/trustify-feb1b [none]
+[debug] [2025-07-27T18:08:31.282Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/trustify-feb1b 200
+[debug] [2025-07-27T18:08:31.283Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/trustify-feb1b {"projectId":"trustify-feb1b","projectNumber":"1044274572349","displayName":"Truvendor","name":"projects/trustify-feb1b","resources":{"hostingSite":"trustify-feb1b"},"state":"ACTIVE","etag":"1_ec3d1b5b-7bb3-48fc-a6f8-273cea8a17dc"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-07-27T18:08:39.871Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2025-07-27T18:08:39.942Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2025-07-27T18:08:39.942Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"12.0.0","browserURL":"https://www.gstatic.com/firebasejs/12.0.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/12.0.0/firebase.tgz"},"live":{"version":"12.0","browserURL":"https://www.gstatic.com/firebasejs/live/12.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/12.0/firebase.tgz"},"components":{"ai":"https://www.gstatic.com/firebasejs/12.0.0/firebase-ai.js","analytics":"https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/12.0.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/12.0.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/12.0.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/12.0.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/12.0.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/12.0.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/12.0.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/12.0.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/12.0.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/12.0.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js","data-connect":"https://www.gstatic.com/firebasejs/12.0.0/firebase-data-connect.js","firestore.memory":"https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.memory.js"}}
+[info] +  Wrote public/index.html 
+[info] 
+[info] i  Detected a .git folder at C:\Users\srish\OneDrive\Documents\GitHub\truvendor 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=614770585&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2025-07-27T18:09:36.693Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2025-07-27T18:09:36.693Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2025-07-27T18:09:37.318Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2025-07-27T18:09:37.318Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2025-07-27T18:09:37.329Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2025-07-27T18:09:37.951Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2025-07-27T18:09:37.952Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"Srishti0411","id":211686935,"node_id":"U_kgDODJ4WFw","avatar_url":"https://avatars.githubusercontent.com/u/211686935?v=4","gravatar_id":"","url":"https://api.github.com/users/Srishti0411","html_url":"https://github.com/Srishti0411","followers_url":"https://api.github.com/users/Srishti0411/followers","following_url":"https://api.github.com/users/Srishti0411/following{/other_user}","gists_url":"https://api.github.com/users/Srishti0411/gists{/gist_id}","starred_url":"https://api.github.com/users/Srishti0411/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Srishti0411/subscriptions","organizations_url":"https://api.github.com/users/Srishti0411/orgs","repos_url":"https://api.github.com/users/Srishti0411/repos","events_url":"https://api.github.com/users/Srishti0411/events{/privacy}","received_events_url":"https://api.github.com/users/Srishti0411/received_events","type":"User","user_view_type":"private","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"created_at":"2025-05-14T13:45:00Z","updated_at":"2025-07-27T18:06:03Z","private_gists":0,"total_private_repos":1,"owned_private_repos":1,"disk_usage":182,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as Srishti0411 
+[info] 
