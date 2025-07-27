@@ -1,21 +1,51 @@
+import { doc, getDoc } from "firebase/firestore";
+import { auth, db } from "../../firebase/firebase";
+import { getAuth,signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase/firebase"; // adjust path if needed
-import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
+
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert("Login successful!");
-      navigate("/dashboard"); // change based on your role routing
-    } catch (error) {
-      alert("Login failed! " + error.message);
+      const userCred = await signInWithEmailAndPassword(auth, email, password);
+      const uid = userCred.user.uid;
+
+      // Get role from Firestore
+      const userRef = doc(db, "users", uid);
+      const userSnap = await getDoc(userRef);
+
+      if (userSnap.exists()) {
+        const role = userSnap.data().role;
+
+        if (role === "vendor") {
+          navigate("/vendor-dashboard");
+        } else if (role === "supplier") {
+          navigate("/supplier-profile");
+        } else {
+          setError("Unknown user role.");
+        }
+      } else {
+        setError("User record not found in Firestore.");
+      }
+    } catch (err) {
+      console.error(err.code);
+      if (err.code === "auth/user-not-found") {
+        setError("Email not found.");
+      } else if (err.code === "auth/wrong-password") {
+        setError("Incorrect password.");
+      } else if (err.code === "auth/invalid-email") {
+        setError("Please enter a valid email.");
+      } else {
+        setError("Login failed. Please try again.");
+      }
     }
   };
 
@@ -25,7 +55,6 @@ const Login = () => {
         onSubmit={handleLogin}
         className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md"
       >
-        {/* TruVendor Title */}
         <h1 className="text-4xl font-bold text-center text-indigo-700 mb-1">
           TruVendor
         </h1>
@@ -37,21 +66,25 @@ const Login = () => {
           Login
         </h2>
 
+        {error && (
+          <p className="text-red-600 text-sm mb-4 text-center">{error}</p>
+        )}
+
         <input
           type="email"
           placeholder="Email"
+          className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
 
         <input
           type="password"
           placeholder="Password"
+          className="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
 
@@ -64,9 +97,9 @@ const Login = () => {
 
         <p className="mt-4 text-sm text-center text-gray-600">
           Don’t have an account?{" "}
-          <Link to="/signup" className="text-blue-600 hover:underline">
+          <a href="/signup" className="text-blue-600 hover:underline">
             Sign up
-          </Link>
+          </a>
         </p>
       </form>
     </div>
