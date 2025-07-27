@@ -5,7 +5,6 @@ import Login from "./features/auth/Login";
 import SupplierProfile from "./features/supplier/SupplierProfile";
 import SupplierDashboard from "./features/supplier/SupplierDashboard";
 import VendorDashboard from "./features/vendor/VendorDashboard";
-import RateSupplier from "./features/vendor/RateSupplier";
 
 const App = () => {
   return (
@@ -17,7 +16,6 @@ const App = () => {
         <Route path="/supplier-profile" element={<SupplierProfile />} />
         <Route path="/supplier/dashboard" element={<SupplierDashboard />} />
         <Route path="/vendor-dashboard" element={<VendorDashboard />} />
-        <Route path="/rate-supplier/:supplierId" element={<RateSupplier />} />
       </Routes>
     </Router>
   );

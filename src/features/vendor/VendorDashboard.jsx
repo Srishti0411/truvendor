@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase/firebase';
 import { collection, getDocs } from 'firebase/firestore';
-import { Link } from "react-router-dom";
 
 const VendorDashboard = () => {
   const [suppliers, setSuppliers] = useState([]);
@@ -53,17 +52,10 @@ const VendorDashboard = () => {
               )}
             </div>
 
-            <p className="mt-4 mb-4 text-sm">
-  <span className="font-medium text-gray-700">Rating: </span>
-  {typeof supplier.ratingSum === "number" && supplier.ratingCount > 0 ? (
-    <span className="font-bold text-blue-600">
-      {(supplier.ratingSum / supplier.ratingCount).toFixed(1)} ★
-    </span>
-  ) : (
-    <span className="text-gray-500 italic">Not rated yet</span>
-  )}
-</p>
-
+            <p className="mt-4 text-sm">
+              <span className="font-medium text-gray-700">Rating: </span>
+              <span className="font-bold text-blue-600">{supplier.rating || 'N/A'}</span>
+            </p>
 
             {supplier.fssaiURL && (
               <a
@@ -76,11 +68,9 @@ const VendorDashboard = () => {
               </a>
             )}
 
-          <Link to={`/rate-supplier/${supplier.id}`}>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-4 rounded-xl w-fit">
-          ⭐ Rate Supplier
-          </button>
-          </Link>
+            <button className="mt-5 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-xl transition">
+              ⭐ Rate Supplier
+            </button>
           </div>
         ))}
       </div>
